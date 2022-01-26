@@ -9,6 +9,8 @@ RUN pip3 install pystache
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
+COPY templates templates
+COPY .gitchangelog.rc .gitchangelog.rc
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
