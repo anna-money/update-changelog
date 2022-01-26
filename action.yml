@@ -3,7 +3,7 @@ description: "Updates the changelog based on changes through start tag and HEAD"
 inputs:
   changelog-template-file:
     description: "Template file for the changelog"
-    required: true
+    required: false
   changelog-file:
     description: "Changelog file to update"
     required: true
@@ -14,6 +14,6 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.changelog-template-file }}
     - ${{ inputs.changelog-file }}
     - ${{ inputs.changelog-start-tag }}
+    - ${{ inputs.changelog-template-file }}

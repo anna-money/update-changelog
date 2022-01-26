@@ -1,9 +1,9 @@
 #!/bin/sh -l
 export PYTHONIOENCODING=UTF-8
 export LC_CTYPE=en_US.UTF-8
-export CHANGELOG_TEMPLATE_FILE=$1
-export CHANGELOG_FILE=$2
+export CHANGELOG_FILE=$1
 export CHANGELOG_START_TAG=$2
+export CHANGELOG_TEMPLATE_FILE=$3
 
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 
