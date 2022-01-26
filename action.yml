@@ -1,15 +1,19 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: "Update the changelog"
+description: "Updates the changelog based on changes through start tag and HEAD"
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  changelog-template-file:
+    description: "Template file for the changelog"
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  changelog-file:
+    description: "Changelog file to update"
+    required: true
+  changelog-start-tag:
+    description: "A tag from which changelog starts generating the history"
+    required: true
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.changelog-template-file }}
+    - ${{ inputs.changelog-file }}
+    - ${{ inputs.changelog-start-tag }}
