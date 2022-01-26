@@ -8,6 +8,7 @@ export CHANGELOG_START_TAG=$2
 export CHANGELOG_TEMPLATE_FILE=$3
 
 export SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+export GITCHANGELOG_CONFIG_FILENAME="$SCRIPT_DIR/.gitchangelog.rc"
 
 git config gitchangelog.template-path "$SCRIPT_DIR/templates"
 python3 /usr/bin/gitchangelog ${CHANGELOG_START_TAG}..HEAD > $CHANGELOG_FILE
