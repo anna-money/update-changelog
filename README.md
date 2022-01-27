@@ -1,23 +1,22 @@
-# Hello world docker action
+# Update changelog action
 
-This action prints "Hello World" to the log or "Hello" + the name of a person to greet. To learn how this action was built, see "[Creating a Docker container action](https://help.github.com/en/articles/creating-a-docker-container-action)" in the GitHub Help documentation.
+Generates a git changelog based on https://github.com/vaab/gitchangelog/
 
 ## Inputs
 
-### `who-to-greet`
+### changelog-template-file
 
-**Required** The name of the person to greet. Default `"World"`.
+Optional param
 
-## Outputs
+Template file for the changelog. Available values are "short.tpl" or "long.tpl". Also it can be an absolute path to [mustache template](https://github.com/vaab/gitchangelog/#mustache).
 
-### `time`
+### changelog-file
 
-The time we greeted you.
+Required param
+Path to file where to put generated changelog to. The file will be overridden
 
-## Example usage
+### changelog-start-tag
 
-```yaml
-uses: actions/hello-world-docker-action@master
-with:
-  who-to-greet: 'Mona the Octocat'
-```
+Required param
+
+Git tag or commit hash to start parsing changelog from
