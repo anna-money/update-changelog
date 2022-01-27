@@ -11,6 +11,8 @@ RUN pip3 install pystache
 COPY entrypoint.sh /entrypoint.sh
 COPY templates /templates
 COPY .gitchangelog.rc /.gitchangelog.rc
+RUN mkdir -p /github/workflow
+WORKDIR /github/workflow
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
