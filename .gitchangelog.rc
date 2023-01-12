@@ -76,7 +76,7 @@ def resolve_kaiten_link(text: str) -> str:
     linked_issues = []
     subj = text
     for issue_str, issue_number in issues:
-        link = f'[{issue_number}](https://anna.kaiten.io/space/12041/card/{issue_number})'
+        link = f'[{issue_number}](https://anna.flowfast.io/space/12041/card/{issue_number})'
         linked_issues.append(link)
         subj = subj.replace(issue_str, '').strip()
     return subj.strip() + ' ' + ', '.join(linked_issues)
